@@ -3,13 +3,12 @@ import "./App.css";
 
 function App() {
 
-  // State variables
   const [password, setPassword] = useState("");
-  const [length, setLength] = useState(8);     // Default password length
+  const [length, setLength] = useState(8);     
   const [numberAllowed, setNumberAllowed] = useState(false);
   const [characterAllowed, setCharacterAllowed] = useState(false);
 
-  // Reference for input for copying
+  // useRef = Reference for input for copying
   const passwordRef = useRef();
 
   
@@ -46,7 +45,6 @@ function App() {
       <h2 className="title">🔐 Password Generator</h2>
       <p className="subtitle">Create a secure password instantly</p>
 
-      {/* Password Field */}
       <div className="password-box">
         <input type="text" className="password-input" value={password} readOnly ref={passwordRef}/>
         <button className="copy-btn" onClick={copyPassToClipboard}>Copy</button>
