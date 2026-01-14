@@ -8,11 +8,8 @@ function App() {
   const [numberAllowed, setNumberAllowed] = useState(false);
   const [characterAllowed, setCharacterAllowed] = useState(false);
 
-  // useRef = Reference for input for copying
   const passwordRef = useRef();
 
-  
-  // Generates a random password using selected options
   const generatePassword = useCallback(() => {
     let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -28,7 +25,7 @@ function App() {
     setPassword(pass);
   }, [length, numberAllowed, characterAllowed]);
 
-  // Auto-generate password when options change
+  
   useEffect(() => {
     generatePassword();
   }, [length, numberAllowed, characterAllowed, generatePassword]);
